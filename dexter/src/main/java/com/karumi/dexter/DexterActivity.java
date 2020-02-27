@@ -33,6 +33,9 @@ public final class DexterActivity extends Activity
     implements ActivityCompat.OnRequestPermissionsResultCallback {
 
   @Override protected void onCreate(Bundle savedInstanceState) {
+    if (savedInstanceState == null) {
+      savedInstanceState = new Bundle();
+    }
     super.onCreate(savedInstanceState);
     Dexter.onActivityReady(this);
     getWindow().addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
